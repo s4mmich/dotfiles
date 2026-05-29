@@ -12,6 +12,7 @@ declare -A FILES_TO_LINK=(
   ["hypr"]="$HOME/.config/hypr"
   ["delta-shell"]="$HOME/.config/delta-shell"
   ["wayle"]="$HOME/.config/wayle"
+  ["alacritty"]="$HOME/.config/alacritty"
 )
 
 echo "Linking dotfiles..."

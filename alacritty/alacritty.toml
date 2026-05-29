@@ -1,0 +1,52 @@
+[font]
+size = 13.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
+[window]
+opacity = 0.75
+
+# Colors (Root Loops)
+# via https://rootloops.sh?sugar=8&colors=10&sogginess=3&flavor=2&fruit=11&milk=1
+
+[colors.primary]
+background = '#2a1c29'
+foreground = '#e1cfdf'
+
+[colors.cursor]
+text = '#2a1c29'
+cursor = '#b694b2'
+
+[colors.normal]
+black = '#432f41'
+red = '#ff8673'
+green = '#00d061'
+yellow = '#d4a800'
+blue = '#8fa9ff'
+magenta = '#ff64f6'
+cyan = '#00c4db'
+white = '#b694b2'
+
+[colors.bright]
+black = '#6e506b'
+red = '#ffab9d'
+green = '#00ea6e'
+yellow = '#eebd00'
+blue = '#adc2ff'
+magenta = '#ff9af7'
+cyan = '#00dcf6'
+white = '#d9c3d6'
