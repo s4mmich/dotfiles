@@ -11,6 +11,7 @@ declare -A FILES_TO_LINK=(
   ["zsh/.zshrc"]="$HOME/.zshrc"
   ["hypr"]="$HOME/.config/hypr"
   ["delta-shell"]="$HOME/.config/delta-shell"
+  ["wayle"]="$HOME/.config/wayle"
 )
 
 echo "Linking dotfiles..."
