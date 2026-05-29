@@ -50,12 +50,10 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("blueberry")
 	hl.exec_cmd("udiskie")
-	--   hl.exec_cmd(terminal)
-	--   hl.exec_cmd("nm-applet")
+	hl.exec_cmd("copyq --start-server")
 	hl.exec_cmd("lxqt-policykit-agent")
 	hl.exec_cmd("hyprpaper & hypridle & hyprlock")
-	hl.exec_cmd("delta-shell run")
-	-- hl.exec_cmd("ags run & dunst & copyq --start-server")
+	hl.exec_cmd("wayle panel start")
 	hl.exec_cmd("kbuildsycoca6")
 	hl.exec_cmd("vesktop")
 	hl.exec_cmd("steam --silent")
@@ -105,9 +103,9 @@ hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencop
 hl.config({
 	general = {
 		gaps_in = 5,
-		gaps_out = 10,
+		gaps_out = 5,
 
-		border_size = 2,
+		border_size = 1,
 
 		col = {
 			active_border = { colors = { "rgba(243, 139, 168, 1)", "rgba(243, 139, 168, 1)" }, angle = 45 },
@@ -124,11 +122,11 @@ hl.config({
 	},
 
 	decoration = {
-		rounding = 10,
+		rounding = 5,
 		rounding_power = 2,
 
 		-- Change transparency of focused and unfocused windows
-		active_opacity = 1.0,
+		active_opacity = 1,
 		inactive_opacity = 0.95,
 
 		shadow = {
