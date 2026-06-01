@@ -37,8 +37,34 @@ right = [
     "clock",
 ]
 
+[[bar.layout]]
+monitor = "eDP-1"
+show = true
+left = [
+    "dashboard",
+    "hyprland-workspaces",
+    "media",
+]
+center = [
+    "cpu",
+    "ram",
+]
+right = [
+    "systray",
+    "battery",
+    "network",
+    "volume",
+    "brightness",
+    "clock",
+]
+
 [styling.palette]
 primary = "#f6a6bb"
+
+[modules.brightness]
+border-show = true
+icon-bg-color = "accent"
+label-color = "accent"
 
 [modules.cava]
 bars = 208
