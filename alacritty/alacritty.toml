@@ -21,32 +21,32 @@ style = "Bold Italic"
 opacity = 0.75
 
 # Colors (Root Loops)
-# via https://rootloops.sh?sugar=8&colors=10&sogginess=3&flavor=2&fruit=11&milk=1
+# via https://rootloops.sh?sugar=8&colors=9&sogginess=2&flavor=0&fruit=11&milk=0.86
 
 [colors.primary]
-background = '#2a1c29'
-foreground = '#e1cfdf'
+background = '#191219'
+foreground = '#e9e1e8'
 
 [colors.cursor]
-text = '#2a1c29'
-cursor = '#b694b2'
+text = '#191219'
+cursor = '#b49eb1'
 
 [colors.normal]
-black = '#432f41'
-red = '#ff8673'
-green = '#00d061'
-yellow = '#d4a800'
-blue = '#8fa9ff'
-magenta = '#ff64f6'
-cyan = '#00c4db'
-white = '#b694b2'
+black = '#342933'
+red = '#fb80aa'
+green = '#a1bd22'
+yellow = '#f49437'
+blue = '#56b8f7'
+magenta = '#bd97fc'
+cyan = '#28c8b1'
+white = '#b49eb1'
 
 [colors.bright]
-black = '#6e506b'
-red = '#ffab9d'
-green = '#00ea6e'
-yellow = '#eebd00'
-blue = '#adc2ff'
-magenta = '#ff9af7'
-cyan = '#00dcf6'
-white = '#d9c3d6'
+black = '#635061'
+red = '#fda7c1'
+green = '#b5d427'
+yellow = '#fcb173'
+blue = '#89cdfc'
+magenta = '#ceb5fd'
+cyan = '#30e1c7'
+white = '#ddd2dc'
