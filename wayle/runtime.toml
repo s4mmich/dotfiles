@@ -8,58 +8,38 @@ button-bg-opacity = 0
 [[bar.layout]]
 monitor = "DP-1"
 show = true
-left = [
-    "dashboard",
-    "hyprland-workspaces",
-    "media",
-]
+left = ["dashboard", "hyprland-workspaces", "media"]
 center = ["cava"]
-right = [
-    "volume",
-    "clock",
-]
+right = ["volume", "clock"]
 
 [[bar.layout]]
 monitor = "HDMI-A-1"
 show = true
-left = [
-    "idle-inhibit",
-    "weather",
-    "updates",
-]
-center = [
-    "cpu",
-    "ram",
-]
-right = [
-    "systray",
-    "notifications",
-    "clock",
-]
+left = ["idle-inhibit", "weather", "updates"]
+center = ["cpu", "ram"]
+right = ["systray", "notifications", "clock"]
 
 [[bar.layout]]
 monitor = "eDP-1"
 show = true
-left = [
-    "dashboard",
-    "hyprland-workspaces",
-    "media",
-]
-center = [
-    "cpu",
-    "ram",
-]
-right = [
-    "systray",
-    "battery",
-    "network",
-    "volume",
-    "brightness",
-    "clock",
-]
+left = ["dashboard", "hyprland-workspaces", "media"]
+center = ["cpu", "ram"]
+right = ["systray", "battery", "network", "volume", "brightness", "clock"]
 
 [styling.palette]
 primary = "#f6a6bb"
+
+[modules.ram]
+icon-bg-color = "accent"
+label-color = "accent"
+
+[modules.cpu]
+icon-bg-color = "accent"
+label-color = "accent"
+
+[modules.battery]
+icon-bg-color = "accent"
+label-color = "accent"
 
 [modules.brightness]
 border-show = true
