@@ -71,11 +71,17 @@ hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
-hl.env("LIBVA_DRIVER_NAME", "nvidia")
-hl.env("XDG_SESSION_TYPE", "wayland")
-hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 hl.env("GTK_THEME", "Adwaita:dark")
+
+hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_MENU_PREFIX", "arch-")
+hl.env("XDG_DESKTOP_PORTAL_HYPRLAND_FORCE_SHM", "1")
+
+-- NVIDIA DRIVERS --
+hl.env("LIBVA_DRIVER_NAME", "nvidia")
+hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+hl.env("GBM_BACKEND", "nvidia-drm")
+hl.env("NVD_BACKEND", "direct")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -122,7 +128,7 @@ hl.config({
 	},
 
 	decoration = {
-		rounding = 5,
+		rounding = 2,
 		rounding_power = 2,
 
 		-- Change transparency of focused and unfocused windows
