@@ -106,6 +106,7 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias hyprconf="nvim ~/.config/hypr/hyprland.lua"
 alias agsreload="source ~/.config/ags/reload.sh"
 alias agsconf="nvim ~/.config/ags/"
+alias dotfiles="nvim ~/dev/dotfiles/"
 #
 
 fastfetch
