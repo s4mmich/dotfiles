@@ -239,10 +239,10 @@ hl.config({
 
 hl.config({
 	input = {
-		kb_layout = "us",
+		kb_layout = "us,de",
 		kb_variant = "",
 		kb_model = "",
-		kb_options = "compose:ralt",
+		kb_options = "compose:ralt,grp:alt_shift_toggle",
 		kb_rules = "",
 
 		follow_mouse = 1,
