@@ -124,3 +124,9 @@ if [[ -z "$TMUX" ]] && [ -n "$PS1" ]; then
     # This guarantees a fresh session that does not interfere with 'default' or 'default-1'
     tmux new-session -s "$SESSION_NAME"
 fi
+
+# Created by `pipx` on 2026-06-16 15:57:03
+export PATH="$PATH:/home/marco/.local/bin"
+
+# NPM global bin (added by Qwen Code installer)
+export PATH="$HOME/.npm-global/bin:$PATH"
