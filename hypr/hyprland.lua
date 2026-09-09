@@ -17,15 +17,16 @@
 hl.monitor({
 	output = "DP-1",
 	mode = "1920x1080@144",
-	position = "0x0",
+	position = "900x0",
 	scale = "1",
 })
 
 hl.monitor({
 	output = "HDMI-A-1",
-	mode = "11440x900",
-	position = "0x-900",
+	mode = "1440x900",
+	position = "0x0",
 	scale = "1",
+	transform = 3,
 })
 
 ---------------------
@@ -133,7 +134,7 @@ hl.config({
 
 		-- Change transparency of focused and unfocused windows
 		active_opacity = 1,
-		inactive_opacity = 0.95,
+		inactive_opacity = 1,
 
 		shadow = {
 			enabled = true,
@@ -186,20 +187,20 @@ hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"
 -- uncomment all if you wish to use that.
--- hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
--- hl.workspace_rule({ workspace = "f[1]",   gaps_out = 0, gaps_in = 0 })
--- hl.window_rule({
---     name  = "no-gaps-wtv1",
---     match = { float = false, workspace = "w[tv1]" },
---     border_size = 0,
---     rounding    = 0,
--- })
--- hl.window_rule({
---     name  = "no-gaps-f1",
---     match = { float = false, workspace = "f[1]" },
---     border_size = 0,
---     rounding    = 0,
--- })
+hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
+hl.workspace_rule({ workspace = "f[1]", gaps_out = 0, gaps_in = 0 })
+hl.window_rule({
+	name = "no-gaps-wtv1",
+	match = { float = false, workspace = "w[tv1]" },
+	border_size = 0,
+	rounding = 0,
+})
+hl.window_rule({
+	name = "no-gaps-f1",
+	match = { float = false, workspace = "f[1]" },
+	border_size = 0,
+	rounding = 0,
+})
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
 hl.config({
