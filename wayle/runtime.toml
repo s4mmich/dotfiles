@@ -1,5 +1,5 @@
 [bar]
-scale = 0.75
+scale = 0.699999988079071
 bg = "bg-base"
 background-opacity = 80
 button-variant = "icon-square"
@@ -8,34 +8,51 @@ button-bg-opacity = 0
 [[bar.layout]]
 monitor = "DP-1"
 show = true
-left = ["dashboard", "hyprland-workspaces", "media"]
-center = ["cava"]
-right = ["volume", "clock"]
+left = [
+    "dashboard",
+    "hyprland-workspaces",
+]
+center = [
+    "cpu",
+    "ram",
+]
+right = [
+    "cava",
+    "systray",
+    "volume",
+    "clock",
+]
 
 [[bar.layout]]
 monitor = "HDMI-A-1"
 show = true
-left = ["idle-inhibit", "weather", "updates"]
-center = ["cpu", "ram"]
-right = ["systray", "notifications", "clock"]
+left = ["media"]
+center = []
+right = ["notifications"]
 
 [[bar.layout]]
 monitor = "eDP-1"
 show = true
-left = ["dashboard", "hyprland-workspaces", "media"]
-center = ["cpu", "ram"]
-right = ["systray", "battery", "network", "volume", "brightness", "clock"]
+left = [
+    "dashboard",
+    "hyprland-workspaces",
+    "media",
+]
+center = [
+    "cpu",
+    "ram",
+]
+right = [
+    "systray",
+    "battery",
+    "network",
+    "volume",
+    "brightness",
+    "clock",
+]
 
 [styling.palette]
 primary = "#f6a6bb"
-
-[modules.ram]
-icon-bg-color = "accent"
-label-color = "accent"
-
-[modules.cpu]
-icon-bg-color = "accent"
-label-color = "accent"
 
 [modules.battery]
 icon-bg-color = "accent"
@@ -47,7 +64,6 @@ icon-bg-color = "accent"
 label-color = "accent"
 
 [modules.cava]
-bars = 208
 framerate = 24
 noise-reduction = 0.2345679012345679
 bar-width = 7
@@ -57,6 +73,10 @@ internal-padding = 0.0
 [modules.clock]
 format = "%H:%M"
 border-show = true
+
+[modules.cpu]
+icon-bg-color = "accent"
+label-color = "accent"
 
 [modules.dashboard]
 border-color = "accent"
@@ -72,7 +92,15 @@ icon-bg-color = "accent"
 label-color = "accent"
 
 [modules.notifications]
+border-show = true
+border-color = "accent"
+icon-bg-color = "accent"
+label-color = "border-accent"
 popup-monitor = "DP-1"
+
+[modules.ram]
+icon-bg-color = "accent"
+label-color = "accent"
 
 [modules.volume]
 border-show = true
