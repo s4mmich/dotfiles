@@ -36,7 +36,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal = "kitty"
 local fileManager = "dolphin"
-local menu = "wofi --show drun -I -a -n -W 500 -H 376"
+-- local menu = "wofi --show drun -I -a -n -W 500 -H 376"
 
 -------------------
 ---- AUTOSTART ----
@@ -48,17 +48,18 @@ local menu = "wofi --show drun -I -a -n -W 500 -H 376"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function()
+	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("lxqt-policykit-agent")
-	hl.exec_cmd("blueberry")
+	-- hl.exec_cmd("blueberry")
 	hl.exec_cmd("udiskie")
 	hl.exec_cmd("copyq --start-server")
-	hl.exec_cmd("hyprpaper & hypridle")
-	hl.exec_cmd("wayle panel start")
+	hl.exec_cmd("hyprpaper & hypridle & hyprsunset")
+	-- hl.exec_cmd("wayle panel start")
+	hl.exec_cmd("caelestia shell -d")
 	hl.exec_cmd("kbuildsycoca6")
 	hl.exec_cmd("vesktop")
 	hl.exec_cmd("steam")
-	hl.exec_cmd("dbus-udate-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 	-- hl.exec_cmd(gsettings set org.gnome.desktop.interface color-scheme "prefer-dark")
 end)
 
@@ -112,10 +113,10 @@ hl.config({
 		gaps_in = 5,
 		gaps_out = 5,
 
-		border_size = 1,
+		border_size = 2,
 
 		col = {
-			active_border = { colors = { "rgba(243, 139, 168, 1)", "rgba(243, 139, 168, 1)" }, angle = 45 },
+			active_border = { colors = { "rgb(196, 167, 231)", "#908caa" }, angle = 45 },
 			inactive_border = "rgba(595959aa)",
 		},
 
@@ -129,7 +130,7 @@ hl.config({
 	},
 
 	decoration = {
-		rounding = 2,
+		rounding = 18,
 		rounding_power = 2,
 
 		-- Change transparency of focused and unfocused windows
@@ -210,27 +211,27 @@ hl.animation({ leaf = "windowsIn", enabled = true, speed = 3, bezier = "md3_dece
 hl.animation({ leaf = "windowsOut", enabled = true, speed = 3, bezier = "md3_accel", style = "popin 60%" })
 hl.animation({ leaf = "border", enabled = true, speed = 10, bezier = "default" })
 hl.animation({ leaf = "fade", enabled = true, speed = 3, bezier = "md3_decel" })
-hl.animation({ leaf = "layersIn", enabled = true, speed = 3, bezier = "menu_decel", style = "slide" })
+hl.animation({ leaf = "layersIn", enabled = true, speed = 3, bezier = "menu_decel", style = "slidevert" })
 hl.animation({ leaf = "layersOut", enabled = true, speed = 1.6, bezier = "menu_accel" })
 hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 2, bezier = "menu_decel" })
 hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 4.5, bezier = "menu_accel" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 7, bezier = "menu_decel", style = "slide" })
-hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 3, bezier = "md3_decel", style = "slidevert" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 7, bezier = "menu_decel", style = "slidevert" })
+hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 3, bezier = "md3_decel", style = "slide" })
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"
 -- uncomment all if you wish to use that.
-hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
-hl.workspace_rule({ workspace = "f[1]", gaps_out = 0, gaps_in = 0 })
+hl.workspace_rule({ workspace = "w[tv1]m[HDMI-A-1]", gaps_out = 0, gaps_in = 0 })
+hl.workspace_rule({ workspace = "f[1]m[HDMI-A-1]", gaps_out = 0, gaps_in = 0 })
 hl.window_rule({
 	name = "no-gaps-wtv1",
-	match = { float = false, workspace = "w[tv1]" },
+	match = { float = false, workspace = "w[tv1]m[HDMI-A-1]" },
 	border_size = 0,
 	rounding = 0,
 })
 hl.window_rule({
 	name = "no-gaps-f1",
-	match = { float = false, workspace = "f[1]" },
+	match = { float = false, workspace = "f[1]m[HDMI-A-1]" },
 	border_size = 0,
 	rounding = 0,
 })
@@ -318,10 +319,11 @@ hl.bind(
 )
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + SPACE", hl.dsp.global("caelestia:launcher"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + C", hl.dsp.layout("togglesplit")) -- dwindle only
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + period", hl.dsp.exec_cmd("plasma-emojier"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
@@ -373,6 +375,8 @@ hl.bind(
 )
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("ddcutil --bus 5 setvcp 10 + 10"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("ddcutil --bus 5 setvcp 10 - 10"), { locked = true, repeating = true })
 
 -- Requires playerctl
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
